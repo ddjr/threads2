@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EA6903B2A69D6F600BC4876 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA6903A2A69D6F600BC4876 /* User.swift */; };
+		3EA6903E2A69D73B00BC4876 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA6903D2A69D73B00BC4876 /* Thread.swift */; };
 		3EE2E8352A68B49D00F9CF50 /* threadsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8342A68B49D00F9CF50 /* threadsApp.swift */; };
-		3EE2E8372A68B49D00F9CF50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8362A68B49D00F9CF50 /* ContentView.swift */; };
+		3EE2E8372A68B49D00F9CF50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8362A68B49D00F9CF50 /* MainView.swift */; };
 		3EE2E8392A68B49E00F9CF50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2E8382A68B49E00F9CF50 /* Assets.xcassets */; };
 		3EE2E83C2A68B49E00F9CF50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2E83B2A68B49E00F9CF50 /* Preview Assets.xcassets */; };
 		3EE2E8452A68B8C700F9CF50 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8442A68B8C700F9CF50 /* ThreadView.swift */; };
 		3EE2E8472A68BD5F00F9CF50 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8462A68BD5F00F9CF50 /* TabsView.swift */; };
 		3EE2E8492A68DC8A00F9CF50 /* NewThreadSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8482A68DC8A00F9CF50 /* NewThreadSheetView.swift */; };
-		3EE2E84B2A698F4E00F9CF50 /* NewThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E84A2A698F4E00F9CF50 /* NewThreadViewModel.swift */; };
 		3EE2E84D2A698FC100F9CF50 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E84C2A698FC100F9CF50 /* HomePageView.swift */; };
 		3EE2E84F2A6990C000F9CF50 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E84E2A6990C000F9CF50 /* ProfileView.swift */; };
 		3EE2E8512A6992E900F9CF50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EE2E8502A6992E900F9CF50 /* GoogleService-Info.plist */; };
@@ -28,15 +29,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EA6903A2A69D6F600BC4876 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3EA6903D2A69D73B00BC4876 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		3EE2E8312A68B49D00F9CF50 /* threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE2E8342A68B49D00F9CF50 /* threadsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = threadsApp.swift; sourceTree = "<group>"; };
-		3EE2E8362A68B49D00F9CF50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3EE2E8362A68B49D00F9CF50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3EE2E8382A68B49E00F9CF50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EE2E83B2A68B49E00F9CF50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3EE2E8442A68B8C700F9CF50 /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
 		3EE2E8462A68BD5F00F9CF50 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		3EE2E8482A68DC8A00F9CF50 /* NewThreadSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThreadSheetView.swift; sourceTree = "<group>"; };
-		3EE2E84A2A698F4E00F9CF50 /* NewThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThreadViewModel.swift; sourceTree = "<group>"; };
 		3EE2E84C2A698FC100F9CF50 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		3EE2E84E2A6990C000F9CF50 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3EE2E8502A6992E900F9CF50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -60,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EA6903C2A69D6FB00BC4876 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EA6903A2A69D6F600BC4876 /* User.swift */,
+				3EA6903D2A69D73B00BC4876 /* Thread.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3EE2E8282A68B49D00F9CF50 = {
 			isa = PBXGroup;
 			children = (
@@ -80,15 +91,14 @@
 			isa = PBXGroup;
 			children = (
 				3EE2E8342A68B49D00F9CF50 /* threadsApp.swift */,
-				3EE2E8362A68B49D00F9CF50 /* ContentView.swift */,
-				3EE2E8462A68BD5F00F9CF50 /* TabsView.swift */,
-				3EE2E8482A68DC8A00F9CF50 /* NewThreadSheetView.swift */,
-				3EE2E85F2A69C1B900F9CF50 /* 🧩View Bits */,
-				3EE2E8592A69BB8600F9CF50 /* SearchView.swift */,
-				3EE2E85D2A69C1A800F9CF50 /* ActivityView.swift */,
+				3EE2E8362A68B49D00F9CF50 /* MainView.swift */,
 				3EE2E84C2A698FC100F9CF50 /* HomePageView.swift */,
+				3EE2E8592A69BB8600F9CF50 /* SearchView.swift */,
+				3EE2E8482A68DC8A00F9CF50 /* NewThreadSheetView.swift */,
+				3EE2E85D2A69C1A800F9CF50 /* ActivityView.swift */,
 				3EE2E84E2A6990C000F9CF50 /* ProfileView.swift */,
-				3EE2E84A2A698F4E00F9CF50 /* NewThreadViewModel.swift */,
+				3EA6903C2A69D6FB00BC4876 /* Models */,
+				3EE2E85F2A69C1B900F9CF50 /* 🧩View Bits */,
 				3EE2E8382A68B49E00F9CF50 /* Assets.xcassets */,
 				3EE2E8502A6992E900F9CF50 /* GoogleService-Info.plist */,
 				3EE2E83A2A68B49E00F9CF50 /* Preview Content */,
@@ -108,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				3EE2E8602A69C1FE00F9CF50 /* SearchBarView.swift */,
+				3EE2E8462A68BD5F00F9CF50 /* TabsView.swift */,
 				3EE2E85B2A69BF2C00F9CF50 /* ActivityItemView.swift */,
 				3EE2E8442A68B8C700F9CF50 /* ThreadView.swift */,
 			);
@@ -193,15 +204,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA6903B2A69D6F600BC4876 /* User.swift in Sources */,
+				3EA6903E2A69D73B00BC4876 /* Thread.swift in Sources */,
 				3EE2E85E2A69C1A800F9CF50 /* ActivityView.swift in Sources */,
 				3EE2E84F2A6990C000F9CF50 /* ProfileView.swift in Sources */,
 				3EE2E85A2A69BB8600F9CF50 /* SearchView.swift in Sources */,
 				3EE2E85C2A69BF2C00F9CF50 /* ActivityItemView.swift in Sources */,
 				3EE2E8612A69C1FE00F9CF50 /* SearchBarView.swift in Sources */,
 				3EE2E8452A68B8C700F9CF50 /* ThreadView.swift in Sources */,
-				3EE2E8372A68B49D00F9CF50 /* ContentView.swift in Sources */,
+				3EE2E8372A68B49D00F9CF50 /* MainView.swift in Sources */,
 				3EE2E8492A68DC8A00F9CF50 /* NewThreadSheetView.swift in Sources */,
-				3EE2E84B2A698F4E00F9CF50 /* NewThreadViewModel.swift in Sources */,
 				3EE2E8472A68BD5F00F9CF50 /* TabsView.swift in Sources */,
 				3EE2E84D2A698FC100F9CF50 /* HomePageView.swift in Sources */,
 				3EE2E8352A68B49D00F9CF50 /* threadsApp.swift in Sources */,

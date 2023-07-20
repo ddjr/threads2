@@ -6,35 +6,72 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
-struct ProfileView: View {
-    let spacing = 5.0
-
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                // 🎩 Settings bar
-                settingsBar
-                // 👨‍🚀 User name and image
-                usernameAndImage
-                // 👨‍🚀 Bio
-                bio
-                // 👨‍👩‍👧‍👦 Followers
-                followers
-                // 📝 Edit/Share Profile
-                editAndShareButtons
+class ProfileViewModel: ObservableObject {
+    private let userId = "sbVaTYrKiEWhhICxs7GZ"
+    @Published var user: User? = nil
+    
+    func getUser() {
+        let database = Firestore.firestore()
+        database.collection("users")
+            .document(userId)
+            .getDocument { [weak self] snapshot, error in
+                guard let data = snapshot?.data(), error == nil
+                else { return }
+                DispatchQueue.main.async {
+                    self?.user = User (
+                        name: data["name"] as? String ?? "",
+                        handle: data["handle"] as? String ?? "",
+                        bio: data["bio"] as? String ?? "",
+                        profilePic: data["profilePic"] as? String ?? "",
+                        followers: data["followers"] as? [String] ?? [],
+                        following: data["following"] as? [String] ?? []
+                    )
+                }
             }
-            .padding()
-            
-            // 🧵 Threads and replies
-            threadsAndRepliesButtons
-            // Threads feed
-            ThreadView()
-            Divider()
-            ThreadView()
-            Divider()
-            ThreadView()
-            Divider()
+    }
+}
+struct ProfileView: View {
+    @StateObject var viewModel = ProfileViewModel()
+    let spacing = 5.0
+    
+    var body: some View {
+            ScrollView {
+                if let user = viewModel.user {
+                VStack(alignment: .leading) {
+                    // 🎩 Settings bar
+                    settingsBar
+                    // 👨‍🚀 User name and image
+                    usernameAndImage(
+                        name: user.name,
+                        handle: user.handle,
+                        image: user.profilePic
+                    )
+                    // 👨‍🚀 Bio
+                    bio(bio: user.bio)
+                    // 👨‍👩‍👧‍👦 Followers
+                    followers(followerCount: user.followers.count)
+                    // 📝 Edit/Share Profile
+                    editAndShareButtons
+                }
+                .padding()
+                
+                // 🧵 Threads and replies
+                threadsAndRepliesButtons
+                // Threads feed
+                ThreadView()
+                Divider()
+                ThreadView()
+                Divider()
+                ThreadView()
+                Divider()
+            } else {
+                Text("Loading Profile...")
+            }
+        }
+        .onAppear {
+            viewModel.getUser()
         }
     }
     
@@ -48,13 +85,13 @@ struct ProfileView: View {
         .padding(.bottom, spacing)
     }
     
-    @ViewBuilder private var usernameAndImage: some View {
+    @ViewBuilder private func usernameAndImage(name: String, handle: String, image: String) -> some View {
         HStack {
             VStack {
-                Text("David Daly")
+                Text(name)
                     .font(.title2)
                     .bold()
-                Text("thedaviddaly")
+                Text(handle)
             }
             Spacer()
             Image(systemName: "person.circle")
@@ -63,15 +100,15 @@ struct ProfileView: View {
         .padding(.bottom, spacing)
     }
     
-    @ViewBuilder private var bio: some View {
-        Text("just a city boy 🫣 born and raised in south detoroit.. \ncoder at google \ntrain BJJ")
+    @ViewBuilder private func bio(bio: String) -> some View {
+        Text(bio)
             .padding(.bottom, spacing)
     }
     
-    @ViewBuilder private var followers: some View {
+    @ViewBuilder private func followers(followerCount: Int) -> some View {
         HStack {
             Image(systemName: "person.circle")
-            Text("34 followers")
+            Text("\(followerCount) followers")
         }
     }
     

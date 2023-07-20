@@ -6,14 +6,37 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+
+class newThreadSheetViewModel: ObservableObject {
+    @Published var threadText: String = ""
+    
+    init() {}
+    
+    func post() {
+        let id = UUID().uuidString
+        let database = Firestore.firestore()
+        database.collection("users")
+            .document("sbVaTYrKiEWhhICxs7GZ")
+            .collection("threads")
+            .document(id)
+            .setData([
+                "id": UUID().uuidString,
+                "text": threadText,
+                "likes": [] as [String],
+                "replies": [] as [String],
+                "createdAt": Date().timeIntervalSince1970
+            ])
+    }
+}
 
 struct NewThreadSheetView: View {
+    @StateObject var viewModel = newThreadSheetViewModel()
     @Binding var showNewThreadView: Bool
-    @State var threadText: String = ""
     var body: some View {
         NavigationStack {
             VStack {
-                NewThreadBody(threadText: $threadText)
+                NewThreadBody(threadText: $viewModel.threadText)
                 Spacer()
                 NewThreadFooter
             }
@@ -74,7 +97,8 @@ struct NewThreadSheetView: View {
                 .foregroundColor(.gray)
             Spacer()
             Button("Post") {
-                
+                viewModel.post()
+                showNewThreadView = false
             }
         }
     }

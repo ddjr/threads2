@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @State var showNewThreadView: Bool = false
     @State var currentTab: String = "home"
+
     var body: some View {
         NavigationStack {
             if currentTab == "profile" {
@@ -36,8 +37,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }

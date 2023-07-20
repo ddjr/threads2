@@ -9,11 +9,14 @@ import SwiftUI
 
 struct ActivityView: View {
     var body: some View {
-        ActivityBarView
-        ActivityView()
-        ActivityView()
-        ActivityView()
-        Spacer()
+        ScrollView {
+            ActivityBarView
+            ActivityItemView()
+            ActivityItemView()
+            ActivityItemView()
+            ActivityItemView()
+            ActivityItemView()
+        }
     }
     @ViewBuilder var ActivityBarView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -24,6 +27,9 @@ struct ActivityView: View {
                     }
                     .padding(.horizontal, 25)
                     .padding(.vertical, 5)
+                    .foregroundColor(.white)
+                    .background(.black)
+                    .cornerRadius(5)
                     .overlay {
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color(uiColor: .systemGray3), lineWidth: 1)
@@ -60,6 +66,7 @@ struct ActivityView: View {
                     }
             }
         }
+        .padding(.leading)
     }
 }
 
