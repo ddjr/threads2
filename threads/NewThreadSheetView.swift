@@ -13,11 +13,11 @@ struct NewThreadSheetView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                writeThread(threadText: $threadText)
+                NewThreadBody(threadText: $threadText)
                 Spacer()
                 NewThreadFooter
             }
-            .padding()
+            .padding(20)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction)  {
                     Text("Cancel")
@@ -35,7 +35,7 @@ struct NewThreadSheetView: View {
         }
     }
 
-    @ViewBuilder func writeThread(threadText: Binding<String>) -> some View {
+    @ViewBuilder func NewThreadBody(threadText: Binding<String>) -> some View {
         VStack {
             VStack {
                 HStack(alignment: .top) {

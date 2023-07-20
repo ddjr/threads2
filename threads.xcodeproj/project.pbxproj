@@ -21,6 +21,10 @@
 		3EE2E8542A69931100F9CF50 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE2E8532A69931100F9CF50 /* FirebaseAuth */; };
 		3EE2E8562A69931100F9CF50 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE2E8552A69931100F9CF50 /* FirebaseFirestore */; };
 		3EE2E8582A69931100F9CF50 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EE2E8572A69931100F9CF50 /* FirebaseFirestoreSwift */; };
+		3EE2E85A2A69BB8600F9CF50 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8592A69BB8600F9CF50 /* SearchView.swift */; };
+		3EE2E85C2A69BF2C00F9CF50 /* ActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E85B2A69BF2C00F9CF50 /* ActivityItemView.swift */; };
+		3EE2E85E2A69C1A800F9CF50 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E85D2A69C1A800F9CF50 /* ActivityView.swift */; };
+		3EE2E8612A69C1FE00F9CF50 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2E8602A69C1FE00F9CF50 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		3EE2E84C2A698FC100F9CF50 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		3EE2E84E2A6990C000F9CF50 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3EE2E8502A6992E900F9CF50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3EE2E8592A69BB8600F9CF50 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		3EE2E85B2A69BF2C00F9CF50 /* ActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItemView.swift; sourceTree = "<group>"; };
+		3EE2E85D2A69C1A800F9CF50 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		3EE2E8602A69C1FE00F9CF50 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +82,10 @@
 				3EE2E8342A68B49D00F9CF50 /* threadsApp.swift */,
 				3EE2E8362A68B49D00F9CF50 /* ContentView.swift */,
 				3EE2E8462A68BD5F00F9CF50 /* TabsView.swift */,
-				3EE2E8442A68B8C700F9CF50 /* ThreadView.swift */,
 				3EE2E8482A68DC8A00F9CF50 /* NewThreadSheetView.swift */,
+				3EE2E85F2A69C1B900F9CF50 /* 🧩View Bits */,
+				3EE2E8592A69BB8600F9CF50 /* SearchView.swift */,
+				3EE2E85D2A69C1A800F9CF50 /* ActivityView.swift */,
 				3EE2E84C2A698FC100F9CF50 /* HomePageView.swift */,
 				3EE2E84E2A6990C000F9CF50 /* ProfileView.swift */,
 				3EE2E84A2A698F4E00F9CF50 /* NewThreadViewModel.swift */,
@@ -92,6 +102,16 @@
 				3EE2E83B2A68B49E00F9CF50 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3EE2E85F2A69C1B900F9CF50 /* 🧩View Bits */ = {
+			isa = PBXGroup;
+			children = (
+				3EE2E8602A69C1FE00F9CF50 /* SearchBarView.swift */,
+				3EE2E85B2A69BF2C00F9CF50 /* ActivityItemView.swift */,
+				3EE2E8442A68B8C700F9CF50 /* ThreadView.swift */,
+			);
+			path = "🧩View Bits";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EE2E85E2A69C1A800F9CF50 /* ActivityView.swift in Sources */,
 				3EE2E84F2A6990C000F9CF50 /* ProfileView.swift in Sources */,
+				3EE2E85A2A69BB8600F9CF50 /* SearchView.swift in Sources */,
+				3EE2E85C2A69BF2C00F9CF50 /* ActivityItemView.swift in Sources */,
+				3EE2E8612A69C1FE00F9CF50 /* SearchBarView.swift in Sources */,
 				3EE2E8452A68B8C700F9CF50 /* ThreadView.swift in Sources */,
 				3EE2E8372A68B49D00F9CF50 /* ContentView.swift in Sources */,
 				3EE2E8492A68DC8A00F9CF50 /* NewThreadSheetView.swift in Sources */,

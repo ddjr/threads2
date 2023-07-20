@@ -19,6 +19,9 @@ struct TabsView: View {
                 }
             Spacer()
             Tab(icon: "magnifyingglass")
+                .onTapGesture {
+                    currentTab = "search"
+                }
             Spacer()
             Tab(icon: "square.and.pencil")
                 .onTapGesture {
@@ -26,6 +29,9 @@ struct TabsView: View {
                 }
             Spacer()
             Tab(icon: "heart")
+                .onTapGesture {
+                    currentTab = "activity"
+                }
             Spacer()
             Tab(icon: "person")
                 .onTapGesture {

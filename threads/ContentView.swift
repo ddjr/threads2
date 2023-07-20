@@ -14,13 +14,17 @@ struct ContentView: View {
         NavigationStack {
             if currentTab == "profile" {
                 ProfileView()
+                    .navigationTitle("")
             } else if currentTab == "search" {
-                // TODO: add SearchView
+                SearchView()
+                    .navigationTitle("Search")
             } else if currentTab == "activity" {
-                // TODO: add ActivityView
+                ActivityView()
+                    .navigationTitle("Activity")
             }
             else {
                 HomePageView()
+                    .navigationTitle("")
             }
             // On every page show tabs at the bottom
             TabsView(showNewThreadView: $showNewThreadView, currentTab: $currentTab)
