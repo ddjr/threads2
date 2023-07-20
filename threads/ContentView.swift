@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showNewThreadView: Bool = false
+    @State var currentTab: String = "home"
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            if currentTab == "profile" {
+                ProfileView()
+            } else if currentTab == "search" {
+                // TODO: add SearchView
+            } else if currentTab == "activity" {
+                // TODO: add ActivityView
+            }
+            else {
+                HomePageView()
+            }
+            // On every page show tabs at the bottom
+            TabsView(showNewThreadView: $showNewThreadView, currentTab: $currentTab)
         }
-        .padding()
+        // New thread page pops up as a sheet
+        .sheet(isPresented: $showNewThreadView) {
+            NewThreadSheetView(showNewThreadView: $showNewThreadView)
+        }
     }
 }
 
