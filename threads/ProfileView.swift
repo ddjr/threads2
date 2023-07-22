@@ -10,7 +10,9 @@ import FirebaseFirestore
 
 class ProfileViewModel: ObservableObject {
     private let userId = "sbVaTYrKiEWhhICxs7GZ"
+    private let handle = "sbVaTYrKiEWhhICxs7GZ"
     @Published var user: User? = nil
+    @Published var threads: [Thread] = []
     
     func getUser() {
         let database = Firestore.firestore()
@@ -31,6 +33,34 @@ class ProfileViewModel: ObservableObject {
                 }
             }
     }
+    
+    func getThreads() {
+        let database = Firestore.firestore()
+        database.collection("users")
+            .document(userId)
+            .collection("threads")
+            .getDocuments { querySnapshot, err in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        let newThread = Thread(
+                            id: data["id"] as? String ?? "",
+                            handle: data["handle"] as? String ?? "",
+                            text: data["text"] as? String ?? "",
+                            likes: data["likes"] as? [String] ?? [],
+                            replies: data["replies"] as? [String] ?? [],
+                            createdAt: data["createdAt"] as? TimeInterval ?? 0
+                        )
+                        
+                        self.threads.append(newThread)
+                        print(self.threads)
+                    }
+                }
+        }
+    }
+    
 }
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
@@ -39,39 +69,38 @@ struct ProfileView: View {
     var body: some View {
             ScrollView {
                 if let user = viewModel.user {
-                VStack(alignment: .leading) {
-                    // 🎩 Settings bar
-                    settingsBar
-                    // 👨‍🚀 User name and image
-                    usernameAndImage(
-                        name: user.name,
-                        handle: user.handle,
-                        image: user.profilePic
-                    )
-                    // 👨‍🚀 Bio
-                    bio(bio: user.bio)
-                    // 👨‍👩‍👧‍👦 Followers
-                    followers(followerCount: user.followers.count)
-                    // 📝 Edit/Share Profile
-                    editAndShareButtons
+                    VStack(alignment: .leading) {
+                        // 🎩 Settings bar
+                        settingsBar
+                        // 👨‍🚀 User name and image
+                        usernameAndImage(
+                            name: user.name,
+                            handle: user.handle,
+                            image: user.profilePic
+                        )
+                        // 👨‍🚀 Bio
+                        bio(bio: user.bio)
+                        // 👨‍👩‍👧‍👦 Followers
+                        followers(followerCount: user.followers.count)
+                        // 📝 Edit/Share Profile
+                        editAndShareButtons
+                    }
+                    .padding()
+                    
+                    // 🧵 Threads and replies
+                    threadsAndRepliesButtons
+                    // Threads feed
+                    ForEach($viewModel.threads, id: \.id) { $thread in
+                        ThreadView(thread: $thread)
+                        Divider()
+                    }
                 }
-                .padding()
-                
-                // 🧵 Threads and replies
-                threadsAndRepliesButtons
-                // Threads feed
-//                ThreadView()
-//                Divider()
-//                ThreadView()
-//                Divider()
-//                ThreadView()
-//                Divider()
-            } else {
-                Text("Loading Profile...")
-            }
+                     
         }
+        .scrollIndicators(.hidden)
         .onAppear {
             viewModel.getUser()
+            viewModel.getThreads()
         }
     }
     

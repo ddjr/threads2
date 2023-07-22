@@ -23,6 +23,7 @@ class newThreadSheetViewModel: ObservableObject {
             .setData([
                 "id": UUID().uuidString,
                 "text": threadText,
+                "handle": "thedaviddaly",
                 "likes": [] as [String],
                 "replies": [] as [String],
                 "createdAt": Date().timeIntervalSince1970
