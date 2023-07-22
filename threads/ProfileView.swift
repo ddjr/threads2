@@ -60,12 +60,12 @@ struct ProfileView: View {
                 // 🧵 Threads and replies
                 threadsAndRepliesButtons
                 // Threads feed
-                ThreadView()
-                Divider()
-                ThreadView()
-                Divider()
-                ThreadView()
-                Divider()
+//                ThreadView()
+//                Divider()
+//                ThreadView()
+//                Divider()
+//                ThreadView()
+//                Divider()
             } else {
                 Text("Loading Profile...")
             }

@@ -25,10 +25,11 @@ class HomePageViewModel: ObservableObject {
                         let data = document.data()
                         let newThread = Thread(
                             id: data["id"] as? String ?? "",
+                            handle: data["handle"] as? String ?? "",
                             text: data["text"] as? String ?? "",
                             likes: data["likes"] as? [String] ?? [],
                             replies: data["replies"] as? [String] ?? [],
-                            createdAt: data["createdAT"] as? TimeInterval ?? 0
+                            createdAt: data["createdAt"] as? TimeInterval ?? 0
                         )
                         
                         self.threads.append(newThread)
@@ -44,8 +45,8 @@ struct HomePageView: View {
     
     var body: some View {
         ScrollView {
-            ForEach(viewModel.threads, id: \.id) { thread in
-                Text(thread.text)
+            ForEach($viewModel.threads, id: \.id) { $thread in
+                ThreadView(thread: $thread)
             }
             
         }

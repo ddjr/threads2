@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ThreadView: View {
+    @Binding var thread: Thread
+    
     var body: some View {
         VStack {
             HStack(alignment: .top) {
@@ -23,14 +25,14 @@ struct ThreadView: View {
                 // 📝 Thread Body
                 VStack{
                     HStack {
-                        Text("Ryanpineda")
+                        Text(thread.handle)
                             .underline()
                         Spacer()
                         Text("37m")
                         Image(systemName: "ellipsis")
                     }
                     
-                    Text("Don't be the successful person who ignores their health and family to chase money.")
+                    Text(thread.text)
                         .padding(.bottom, 1)
                     HStack {
                         Image(systemName: "heart")
@@ -44,10 +46,10 @@ struct ThreadView: View {
             HStack {
                 // TODO: replace with user image
                 Image(systemName: "person.circle")
-                Text("19 replies")
+                Text("\(thread.replies.count) replies")
                     .underline()
                 Text("•")
-                Text("773 likes")
+                Text("\(thread.likes.count) likes")
                     .underline()
                 Spacer()
             }
@@ -60,7 +62,8 @@ struct ThreadView: View {
 }
 
 struct ThreadView_Previews: PreviewProvider {
+    static var thread = Thread(id: "12324453", handle: "thedaviddaly", text: "This is a text", likes: ["asdfasd","asdfasd"], replies: ["asdfasd","asdfasd","asdfasd","asdfasd"], createdAt: 0)
     static var previews: some View {
-        ThreadView()
+        ThreadView(thread: .constant(thread))
     }
 }
